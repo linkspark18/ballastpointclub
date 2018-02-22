@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Name: Ballast Point Club Log In Page
+Author: Davis Nguyen
+Date: 2/19/2018
+Description: This is the log in page for the Ballast Point Club web site. 
+Users can choose whether to create a new account or log into an existing one.
+-->
+<html>
+    <head>
+        <title>Ballast Point Club</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="ballastpointStyles.css" rel="stylesheet" />
+    </head>
+	
+    <body background="ballastpoint_background.png">	
+        <header>
+            <nav>
+                <ul>
+                    <li><img src="ballastpoint_logo.png" alt="Logo" /></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Beers</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Visit</a></li>
+                    <li><a href="#">Shop</a></li>			
+                    <li><a href="LogIn.html">Log In</a></li>			
+                    <li><a href="Registration.html">Register</a></li>			
+                </ul>
+            </nav>
+        </header>
+
+        <section id="create_account">
+            <h1>Create New Account</h1>
+            <a href="Registration.html" class="button">Register</a>
+        </section>
+
+        <section id="log_in">
+            <h1>Log In</h1>
+                <form>
+                    <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                        <span id="username_error"></span><br>
+                    <label for="password">Password</label>
+                        <input type="text" name="password" id="password">
+                        <span id="password_error"></span><br>
+                </form>
+                <a href="#">Forgot Password?</a>
+        </section>
+
+        <footer>
+            <a href="https://www.facebook.com/BallastPoint"><img src="Footer/icon_facebook.png" alt="Facebook"/></a>
+            <a href="https://www.twitter.com/BallastPoint"><img src="Footer/icon_twitter.png" alt="Twitter"/></a>
+            <a href="https://www.instagram.com/ballastpointbrewing"><img src="Footer/icon_instagram.png" alt="Instagram"/></a>
+            <a href="mailto:info@ballastpoint.com"><img src="Footer/icon_email.png" alt="Email"/></a>
+            <a href="https://www.ballastpoint.com/locations/"><img src="Footer/icon_locations.png" alt="Locations"/></a>
+        </footer>
+    </body>
+</html>
