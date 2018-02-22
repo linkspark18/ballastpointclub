@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<?php
+
+
+$servername = "localhost";
+$username = "ad_capstone";
+$password = "fbcec351";
+$dbname = "ad_capstone";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if($conn->connect_error) {
+    die("connection failed: " . $conn->connect_error);
+}
+        
+?>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ballast Point Club</title>
+	<link href="css/ballastpointStyles.css" rel="stylesheet" />
+</head>
+	
+<body background="img/ballastpoint_background.png">
+	
+	<header>
+		<nav>
+			<ul>
+				<li><img src="img/ballastpoint_logo.png" alt="Logo" /></li>
+				<li><a href="#">News</a></li>
+				<li><a href="BeerList.php">Beers</a></li>
+				<li><a href="#">Events</a></li>
+				<li><a href="#">Visit</a></li>
+				<li><a href="#">Shop</a></li>			
+				<li><a href="LogIn.php">Log In</a></li>			
+				<li><a href="Registration.php">Register</a></li>			
+			</ul>
+		</nav>
+	<header>
+
+	<section id="beer_list">
+            <?php
+
+		$query = "SELECT * FROM beer_list";
+		$result = mysqli_query($conn, $query);
+           	
+		echo "<table>";
+
+		while($row = mysqli_fetch_assoc($result)) {
+       			echo "<tr><td>" . "<img src =".$row['beer_img'].">" . $row['beer_name'] . "<br>" . $row['beer_type'];
+		}
+		
+		echo "</table>";
+            ?>
+	</section>
+
+	<footer>
+            <a href="https://www.facebook.com/BallastPoint"><img src="img/SocialMediaIcons/icon_facebook.png" alt="Facebook"/></a>
+            <a href="https://www.twitter.com/BallastPoint"><img src="img/SocialMediaIcons/icon_twitter.png" alt="Twitter"/></a>
+            <a href="https://www.instagram.com/ballastpointbrewing"><img src="img/SocialMediaIcons/icon_instagram.png" alt="Instagram"/></a>
+            <a href="mailto:info@ballastpoint.com"><img src="img/SocialMediaIcons/icon_email.png" alt="Email"/></a>
+            <a href="https://www.ballastpoint.com/locations/"><img src="img/SocialMediaIcons/icon_locations.png" alt="Locations"/></a>
+        </footer>
+</body>
+</html>
